@@ -4,11 +4,21 @@ from webdriver_manager.chrome  import ChromeDriverManager
 import pandas as pd
 
 def scraping():
+    #都道府県
+    pre = input("都道府県名を入力してください")
+    
+    #判別
+    if pre == "広島" :
+        preno = 34
+    else:
+        pass
+      
+    #広島県
     driver_path = ChromeDriverManager().install()
     driver = Chrome(driver_path)
-
-    #広島県
-    driver.get("https://www.kaigokensaku.mhlw.go.jp/34/index.php")
+    url ="https://www.kaigokensaku.mhlw.go.jp/"+ str(preno) +"/index.php"
+    #driver.get("https://www.kaigokensaku.mhlw.go.jp/{preno}/index.php")
+    print(url)
 
     sleep(3)
 
